@@ -1,0 +1,167 @@
+/* ============================
+   Kavalkaran – Articles CSS
+   ============================ */
+
+:root {
+  --bg: #0b0f1a;
+  --card: #12172a;
+  --text: #e6e9f0;
+  --muted: #9aa4bf;
+  --accent: #4da3ff;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  line-height: 1.75;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.logo img {
+  height: 30px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Main Layout */
+main {
+  max-width: 760px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Article Card */
+article {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Headings */
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 32px;
+  font-size: 22px;
+}
+
+h3 {
+  margin-top: 22px;
+  font-size: 18px;
+}
+
+/* Meta */
+.meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* Text */
+p {
+  margin: 16px 0;
+  color: #d8dbef;
+}
+
+ul {
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* Alert / Warning Box */
+.alert {
+  background: rgba(255, 80, 80, 0.12);
+  border-left: 4px solid #ff5050;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 24px 0;
+  font-size: 15px;
+}
+
+/* Call to Action */
+.cta {
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #4da3ff, #7db7ff);
+  border-radius: 14px;
+  color: #08101f;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #08101f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+  article {
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
