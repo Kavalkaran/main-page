@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Offline – Kavalkaran</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0f1a">
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#12182a;
+  --text:#e6e9f0;
+  --muted:#9aa4bf;
+  --accent:#4da3ff;
+  --danger:#ff6b6b;
+  --line:rgba(255,255,255,.08);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:
+    radial-gradient(800px 400px at 50% -10%,#1a2a6c,transparent),
+    var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  color:var(--text);
+  overflow:hidden;
+}
+
+/* Floating animation */
+.bg-orb{
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle,var(--accent),transparent 70%);
+  opacity:.08;
+  border-radius:50%;
+  animation:float 12s infinite alternate ease-in-out;
+}
+
+@keyframes float{
+  from{transform:translate(-100px,-50px)}
+  to{transform:translate(100px,50px)}
+}
+
+.card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:420px;
+  background:var(--card);
+  border-radius:20px;
+  padding:26px;
+  box-shadow:0 30px 70px rgba(0,0,0,.5);
+  animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+.logo img{width:42px}
+.logo span{font-weight:700;font-size:18px}
+
+.status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--danger);
+  font-size:13px;
+}
+.dot{
+  width:8px;height:8px;
+  background:var(--danger);
+  border-radius:50%;
+  animation:pulse 1.2s infinite;
+}
+@keyframes pulse{50%{opacity:.3}}
+
+h1{font-size:22px;margin:10px 0}
+p{font-size:14px;color:var(--muted);line-height:1.6}
+
+.actions{display:grid;gap:12px;margin-top:18px}
+
+button{
+  padding:13px;
+  border-radius:12px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.retry{background:var(--accent);color:#08101f}
+.game-btn{background:transparent;color:var(--text);border:1px solid var(--line)}
+
+footer{
+  margin-top:18px;
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* GAME */
+#game{
+  display:none;
+  text-align:center;
+}
+
+#playArea{
+  margin:16px auto;
+  width:240px;
+  height:240px;
+  background:#0e1430;
+  border-radius:16px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+}
+
+.shield{
+  position:absolute;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--accent),#1a2a6c);
+  animation:pop .4s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.3);opacity:.4}
+  to{transform:scale(1);opacity:1}
+}
+
+.score{
+  font-size:16px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-orb"></div>
+
+<div class="card">
+
+  <!-- INFO SECTION -->
+  <div id="info">
+    <div class="logo">
+      <img src="/assets/logo.png">
+      <span>Kavalkaran</span>
+    </div>
+
+    <div class="status">
+      <div class="dot"></div> Offline mode
+    </div>
+
+    <h1>You’re offline</h1>
+    <p>
+      Stay calm. Kavalkaran will reconnect automatically.
+      Until then, protect the network by collecting shields 🛡️
+    </p>
+  </div>
+
+  <!-- GAME SECTION -->
+  <div id="game">
+    <h1>Offline Shield Game</h1>
+    <div id="playArea"></div>
+    <div class="score">Score: <span id="score">0</span></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <button class="retry" onclick="retry()">Retry connection</button>
+    <button class="game-btn" onclick="startGame()">Play game</button>
+  </div>
+
+  <footer>
+    Guardian of the Common Man • 🇮🇳
+  </footer>
+
+</div>
+
+<script>
+let score=0,interval,playing=false;
+
+function retry(){
+  location.reload();
+}
+
+function startGame(){
+  document.getElementById("info").style.display="none";
+  document.getElementById("game").style.display="block";
+  if(playing) return;
+  playing=true;
+  interval=setInterval(spawnShield,900);
+}
+
+function spawnShield(){
+  const area=document.getElementById("playArea");
+  const shield=document.createElement("div");
+  shield.className="shield";
+  shield.style.left=Math.random()*200+"px";
+  shield.style.top=Math.random()*200+"px";
+
+  shield.onclick=()=>{
+    score++;
+    document.getElementById("score").textContent=score;
+    shield.remove();
+  };
+
+  area.appendChild(shield);
+  setTimeout(()=>shield.remove(),1500);
+}
+
+window.addEventListener("online",()=>location.reload());
+</script>
+
+</body>
+</html>
