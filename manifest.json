@@ -1,0 +1,23 @@
+{
+  "name": "Kavalkaran",
+  "short_name": "Kavalkaran",
+  "description": "Kavalkaran – Guardian of the Common Man. Protecting people from cyber frauds and digital threats.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0f1a",
+  "theme_color": "#0b0f1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
