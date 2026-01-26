@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kavalkaran</title>
+  <title>Kavalkaran – Guardian of the Common Man</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kavalkaran – Guardian of the Common Man" />
+  <meta name="description" content="Kavalkaran protects people from cyber frauds and digital threats, in the language they understand." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
 
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
@@ -19,7 +23,10 @@
       --accent: #4da3ff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
 
     body {
       margin: 0;
@@ -28,7 +35,7 @@
       color: var(--text);
     }
 
-    /* NAV */
+    /* ================= NAV ================= */
     header {
       display: flex;
       justify-content: space-between;
@@ -36,19 +43,21 @@
       padding: 16px 20px;
       border-bottom: 1px solid var(--line);
     }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 700;
-}
 
-.logo img {
-  height: 32px;
-  width: auto;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
 
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
 
     nav a {
       font-size: 14px;
@@ -56,7 +65,11 @@
       text-decoration: none;
     }
 
-    /* MAIN */
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* ================= MAIN ================= */
     main {
       max-width: 720px;
       margin: auto;
@@ -65,7 +78,8 @@
 
     h1 {
       font-size: 32px;
-      margin: 0 0 10px;
+      margin: 0 0 12px;
+      line-height: 1.2;
     }
 
     .desc {
@@ -75,7 +89,7 @@
       margin-bottom: 28px;
     }
 
-    /* LANGUAGES */
+    /* ================= LANGUAGES ================= */
     .languages {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -84,24 +98,36 @@
     .lang {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 16px 0;
       border-bottom: 1px solid var(--line);
       cursor: pointer;
     }
 
-    .lang:last-child { border-bottom: none; }
+    .lang:last-child {
+      border-bottom: none;
+    }
+
+    .lang:hover {
+      background: rgba(255,255,255,0.02);
+    }
 
     .native {
       color: var(--muted);
+      font-size: 14px;
     }
 
-    /* ACTIONS */
+    /* ================= ACTIONS ================= */
     .news {
       display: inline-block;
       margin-top: 24px;
       font-size: 14px;
       color: var(--accent);
       text-decoration: none;
+    }
+
+    .news:hover {
+      text-decoration: underline;
     }
 
     .install-btn {
@@ -118,7 +144,7 @@
       display: none;
     }
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
     footer {
       border-top: 1px solid var(--line);
       padding: 20px;
@@ -130,17 +156,19 @@
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
-<a href="/" class="logo">
-  <img src="/assets/logo.svg" alt="Kavalkaran Logo">
-  <span>Kavalkaran</span>
-</a>
+  <a href="/" class="logo">
+    <img src="/assets/logo.png" alt="Kavalkaran Logo">
+    <span>Kavalkaran</span>
+  </a>
 
   <nav>
     <a href="/about">About</a>
   </nav>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
   <h1>Guardian of the Common Man</h1>
   <p class="desc">
@@ -149,7 +177,7 @@
   </p>
 
   <section class="languages">
-    <div class="lang" onclick="go('/en')">
+    <div class="lang" onclick="go('https://en.kavalkaran.in')">
       <span>English</span>
       <span class="native">English</span>
     </div>
@@ -157,11 +185,6 @@
     <div class="lang" onclick="go('https://ml.kavalkaran.in')">
       <span>Malayalam</span>
       <span class="native">മലയാളം</span>
-    </div>
-
-    <div class="lang" onclick="go('https://hi.kavalkaran.in')">
-      <span>Hindi</span>
-      <span class="native">हिन्दी</span>
     </div>
 
     <div class="lang" onclick="go('https://in.kavalkaran.in')">
@@ -182,27 +205,30 @@
   </button>
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   © <span id="year"></span> Kavalkaran • Built in India 🇮🇳
 </footer>
 
+<!-- ================= SCRIPTS ================= -->
 <script>
   function go(url) {
     window.location.href = url;
   }
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-  // Service Worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
+  /* Service Worker */
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
   }
 
-  // Install App logic
+  /* PWA Install Logic */
   let deferredPrompt;
   const installBtn = document.getElementById("installBtn");
 
-  if (window.matchMedia('(display-mode: standalone)').matches) {
+  if (window.matchMedia("(display-mode: standalone)").matches) {
     installBtn.style.display = "none";
   }
 
