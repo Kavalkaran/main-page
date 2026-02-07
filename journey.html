@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kavalkaran Journey | A Real Story of Cyber Survival</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The real journey of Kavalkaran – born from a phishing attack, rebuilt through experience, and grown into a YIP state-winning cybersecurity platform.">
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --bg2:#12172a;
+  --accent:#6aa9ff;
+  --accent2:#8bffda;
+  --text:#ffffff;
+  --muted:#b5b8c5;
+  --border:rgba(255,255,255,.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,15,26,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:14px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav strong span{color:var(--accent)}
+nav a{
+  color:var(--muted);
+  margin-left:22px;
+  text-decoration:none;
+  font-size:.95rem;
+}
+nav a:hover{color:var(--text)}
+
+/* HERO */
+header{
+  padding:130px 20px 110px;
+  text-align:center;
+  background:
+    radial-gradient(circle at top,#1a2450,transparent 60%),
+    linear-gradient(to bottom,#0b0f1a,#090d17);
+}
+header h1{
+  font-size:3.1rem;
+  margin-bottom:16px;
+}
+header p{
+  max-width:900px;
+  margin:auto;
+  color:var(--muted);
+  font-size:1.15rem;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  padding-left:46px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:linear-gradient(var(--accent),transparent);
+}
+
+/* STEP */
+.step{
+  position:relative;
+  margin-bottom:75px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+.step.show{
+  opacity:1;
+  transform:none;
+}
+.step::before{
+  content:"";
+  position:absolute;
+  left:-38px;
+  top:16px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 18px var(--accent);
+}
+
+/* CARD */
+.card{
+  background:linear-gradient(135deg,var(--bg2),#0f1426);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:34px;
+  box-shadow:0 30px 60px rgba(0,0,0,.55);
+}
+
+.badge{
+  display:inline-block;
+  font-size:.75rem;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid var(--border);
+  color:var(--accent2);
+  margin-bottom:12px;
+}
+
+.date{
+  display:block;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.card h2{
+  font-size:1.65rem;
+  margin-bottom:14px;
+}
+
+.card p{
+  color:#d1d3e0;
+  margin-bottom:12px;
+}
+
+/* FOOTER */
+footer{
+  background:#080b14;
+  border-top:1px solid var(--border);
+  padding:45px 20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+footer strong{color:var(--text)}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  header h1{font-size:2.2rem}
+  .timeline{padding-left:32px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <strong>Kavalkaran<span>.</span></strong>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Tools</a>
+    <a href="#">Journey</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Our Real Journey</h1>
+  <p>
+    Kavalkaran was not born in a lab or an office.
+    It was born from a real cyber attack, real loss,
+    and the decision to build something that actually protects people.
+  </p>
+</header>
+
+<main class="container">
+<section class="timeline">
+
+  <!-- PHISHING -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">⚠️ Cyber Incident</span>
+      <span class="date">Mid 2024</span>
+      <h2>A Phishing Attack Changed Everything</h2>
+      <p>
+        While creating and publishing games on Scratch, I became a victim of a phishing attack.
+        The attack stole my Scratch account and all my games.
+      </p>
+      <p>
+        The phishing attempt also targeted my Gmail account.
+        Although the Gmail was mainly connected only to Scratch,
+        for me, Scratch <strong>was my life at that time</strong>.
+      </p>
+    </div>
+  </article>
+
+  <!-- REGRET -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🧠 Realization</span>
+      <span class="date">Mid – Late 2024</span>
+      <h2>Awareness Alone Was Not Enough</h2>
+      <p>
+        I was already aware of cyber threats — yet I still fell into one.
+        Emotions, urgency, and trust pulled me into the attack.
+      </p>
+      <p>
+        That’s when I understood something important:
+        <strong>awareness alone cannot protect people</strong>.
+        Real-world tools are necessary.
+      </p>
+    </div>
+  </article>
+
+  <!-- RESEARCH -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🔍 Research</span>
+      <span class="date">Late 2024 – 2025</span>
+      <h2>Searching for Solutions</h2>
+      <p>
+        I started exploring existing cybersecurity tools.
+        Most were confusing, filled with technical jargon,
+        or surrounded by fraud and false promises.
+      </p>
+      <p>
+        There was a clear gap — a blank space —
+        for simple, honest, user-focused security tools.
+      </p>
+    </div>
+  </article>
+
+  <!-- FIRST BUILD -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🛠️ First Build</span>
+      <span class="date">August 6, 2025</span>
+      <h2>Kavalkaran Was Published</h2>
+      <p>
+        Kavalkaran was first published on my personal account using GitHub Pages.
+        A Malayalam version was built first, followed by an English version.
+      </p>
+      <p>
+        The goal was simple: build tools that normal users can understand and use.
+      </p>
+    </div>
+  </article>
+
+  <!-- YIP -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🏆 YIP 8.0</span>
+      <span class="date">2025 – January 23, 2026</span>
+      <h2>From Primary List to State Winner</h2>
+      <p>
+        Kavalkaran participated in <strong>YIP 8.0</strong>.
+        In 2025, it became a primary list winner and later a district-level winner.
+      </p>
+      <p>
+        On <strong>January 23, 2026</strong>, Kavalkaran was declared a
+        <strong>YIP State Winner</strong>.
+      </p>
+    </div>
+  </article>
+
+  <!-- LAUNCH V2 -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🚀 Launch</span>
+      <span class="date">January 25, 2026</span>
+      <h2>Version 2 & Community Launch</h2>
+      <p>
+        Version 2 of Kavalkaran was launched along with
+        a Premium version and an Ultimate Free version.
+      </p>
+      <p>
+        A WhatsApp community was also introduced to support users
+        and spread real-time cyber safety.
+      </p>
+    </div>
+  </article>
+
+  <!-- SCIENCE CONGRESS -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🎓 Recognition</span>
+      <span class="date">February 1, 2026</span>
+      <h2>38th Kerala Science Congress</h2>
+      <p>
+        Kavalkaran was presented at the
+        <strong>38th Kerala Science Congress</strong>
+        representing YIP State Winners.
+      </p>
+      <p>
+        Valuable feedback, new users, and expert suggestions
+        helped refine the platform further.
+      </p>
+    </div>
+  </article>
+
+  <!-- FUTURE -->
+  <article class="step">
+    <div class="card">
+      <span class="badge">🔮 Future</span>
+      <span class="date">Beyond 2026</span>
+      <h2>Built From Experience, Growing With Purpose</h2>
+      <p>
+        Kavalkaran continues to grow — shaped by real incidents,
+        real users, and real needs.
+      </p>
+      <p>
+        This is not just a platform.
+        It is a response to a problem that once changed my life.
+      </p>
+    </div>
+  </article>
+
+</section>
+</main>
+
+<footer>
+  © 2026 <strong>Kavalkaran</strong> · Built from experience, not theory. 
+<a href="https://athulvinodm.vercel.app"> {Athul vinod - Developed the entire Kavalkaran at 13 year old}</a>
+</footer>
+
+<script>
+const steps=document.querySelectorAll('.step');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('show')}
+  });
+},{threshold:.2});
+steps.forEach(s=>obs.observe(s));
+</script>
+
+</body>
+</html>
