@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,201 +66,321 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0b0f1a">
 
-  <style>
-    :root {
-      --bg: #0b0f1a;
-      --text: #e6e9f0;
-      --muted: #9aa4bf;
-      --line: rgba(255,255,255,0.08);
-      --accent: #4da3ff;
-    }
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#111827;
+  --text:#e6e9f0;
+  --muted:#9aa4bf;
+  --accent:#4da3ff;
+  --line:rgba(255,255,255,0.08);
+}
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+html{scroll-behavior:smooth}
 
-    /* ================= NAV ================= */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--line);
-    }
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      color: var(--text);
-    }
+a{text-decoration:none;color:inherit}
 
-    .logo img {
-      height: 32px;
-      width: auto;
-    }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-bottom:1px solid var(--line);
+}
 
-    nav a {
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:18px;
+}
 
-    nav a:hover {
-      color: var(--text);
-    }
+.logo img{height:32px}
 
-    /* ================= MAIN ================= */
-    main {
-      max-width: 720px;
-      margin: auto;
-      padding: 48px 20px;
-    }
+nav a{
+  font-size:14px;
+  color:var(--muted);
+  margin-left:18px;
+}
 
-    h1 {
-      font-size: 32px;
-      margin: 0 0 12px;
-      line-height: 1.2;
-    }
+nav a:hover{color:var(--text)}
 
-    .desc {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    /* ================= LANGUAGES ================= */
-    .languages {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
+.hero{
+  text-align:center;
+  max-width:760px;
+  margin:auto;
+}
 
-    .lang {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line);
-      cursor: pointer;
-    }
+.hero h1{
+  font-size:36px;
+  line-height:1.2;
+  margin-bottom:16px;
+}
 
-    .lang:last-child {
-      border-bottom: none;
-    }
+.hero p{
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:28px;
+}
 
-    .lang:hover {
-      background: rgba(255,255,255,0.02);
-    }
+.cta-group{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-    .native {
-      color: var(--muted);
-      font-size: 14px;
-    }
+.btn-primary{
+  background:var(--accent);
+  color:#08101f;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:600;
+}
 
-    /* ================= ACTIONS ================= */
-    .news {
-      display: inline-block;
-      margin-top: 24px;
-      font-size: 14px;
-      color: var(--accent);
-      text-decoration: none;
-    }
+.btn-secondary{
+  border:1px solid var(--line);
+  padding:12px 20px;
+  border-radius:10px;
+  color:var(--text);
+}
 
-    .news:hover {
-      text-decoration: underline;
-    }
+section{
+  margin-top:80px;
+}
 
-    .install-btn {
-      margin-top: 20px;
-      width: 100%;
-      padding: 14px;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: 12px;
-      border: none;
-      background: var(--accent);
-      color: #08101f;
-      cursor: pointer;
-      display: none;
-    }
+section h2{
+  font-size:24px;
+  margin-bottom:20px;
+  text-align:center;
+}
 
-    /* ================= FOOTER ================= */
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 20px;
-      font-size: 13px;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
+.grid{
+  display:grid;
+  gap:24px;
+}
+
+.products{
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+  transition:0.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+}
+
+.card h3{
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.languages{
+  max-width:600px;
+  margin:auto;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.lang{
+  display:flex;
+  justify-content:space-between;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.lang:last-child{border-bottom:none}
+
+.lang span:last-child{
+  color:var(--muted);
+  font-size:14px;
+}
+
+footer{
+  margin-top:80px;
+  border-top:1px solid var(--line);
+  padding:30px 20px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <a href="/" class="logo">
-    <img src="/assets/logo.png" alt="Kavalkaran Logo">
-    <span>Kavalkaran</span>
+    <img src="/assets/logo.png" alt="Kavalkaran Cyber Security Ecosystem Logo">
+    Kavalkaran
   </a>
 
-  <nav>
-    <a href="https://about.kavalkaran.in">About</a>
+  <nav aria-label="Primary navigation">
+
+    <a href="/journey.html">Our Story</a>
   </nav>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main>
-  <h1>Guardian of the Common Man</h1>
-  <p class="desc">
-    Kavalkaran protects people from cyber frauds and digital threats,
-    in the language they understand.
-  </p>
 
-  <section class="languages">
-    <div class="lang" onclick="go('https://en.kavalkaran.in')">
-      <span>English</span>
-      <span class="native">English</span>
-    </div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Kavalkaran – Digital Protection Infrastructure</h1>
+    <p>
+      Kavalkaran is a multi-layer cyber security ecosystem protecting
+      individuals, businesses, and digital systems from online fraud,
+      phishing attacks, financial scams, network threats, and advanced
+      cyber risks.
+    </p>
 
-    <div class="lang" onclick="go('https://ml.kavalkaran.in')">
-      <span>Malayalam</span>
-      <span class="native">മലയാളം</span>
-    </div>
-
-    <div class="lang" onclick="go('https://in.kavalkaran.in')">
-      <span>All Indian Languages</span>
-      <span class="native">भारतीय भाषाएँ</span>
-    </div>
-
-    <div class="lang" onclick="go('https://global.kavalkaran.in')">
-      <span>Global Languages</span>
-      <span class="native">Worldwide</span>
+    <div class="cta-group">
+      <a href="/guardian/" class="btn-primary">Start with Guardian (Free)</a>
+      <a href="/journey.html" class="btn-secondary">Our Mission</a>
     </div>
   </section>
 
-  <a class="news" href="/journey.html">See the true story of how kavalkaran built →</a>
+  <!-- PRODUCT ECOSYSTEM -->
+  <section aria-labelledby="products-heading">
+    <h2 id="products-heading">Kavalkaran Product Ecosystem</h2>
 
-  <button id="installBtn" class="install-btn">
-    Install Kavalkaran App
-  </button>
+    <div class="grid products">
+
+      <!-- Guardian -->
+      <article class="card">
+        <h3>🛡 Guardian</h3>
+        <p>
+          Free public cyber protection suite featuring link scanning,
+          QR code verification, secure file locker, cyber guidance,
+          and emergency access tools. Built for everyday digital users.
+        </p>
+        <a href="/guardian/" class="btn-secondary">Explore Guardian</a>
+      </article>
+
+      <!-- Super Guardian -->
+      <article class="card">
+        <h3>⚡ Super Guardian</h3>
+        <p>
+          Premium upgrade of Guardian offering enhanced detection accuracy,
+          expanded security tools, priority support, and advanced
+          fraud intelligence capabilities.
+        </p>
+        <a href="/super-guardian/" class="btn-secondary">View Super Guardian</a>
+      </article>
+
+      <!-- KS Web -->
+      <article class="card">
+        <h3>🌐 Kavalkaran Secure Web (KS Web)</h3>
+        <p>
+          Installable website security package providing SOC dashboards,
+          automated vulnerability monitoring, advanced data protection,
+          and real-time threat automation for business websites.
+        </p>
+        <a href="/ks-web/" class="btn-secondary">Learn About KS Web</a>
+      </article>
+
+      <!-- Desk Doctor -->
+      <article class="card">
+        <h3>💻 Desk Doctor</h3>
+        <p>
+          Advanced desktop security application for laptops and computers.
+          Monitors system health, verifies incoming and outgoing network logs,
+          and protects devices through multi-layer monitoring.
+        </p>
+        <a href="/desk-doctor/" class="btn-secondary">Discover Desk Doctor</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- LANGUAGE ACCESS LAYER -->
+  <section aria-labelledby="language-heading">
+    <h2 id="language-heading">Language Protection Network</h2>
+
+    <p style="text-align:center;max-width:700px;margin:0 auto 30px;color:var(--muted);">
+      Kavalkaran provides cyber protection across dedicated language
+      subdomains, ensuring digital safety is accessible beyond English.
+    </p>
+
+    <div class="languages">
+
+      <div class="lang">
+        <a href="https://en.kavalkaran.in/" hreflang="en">English</a>
+        <span>English</span>
+      </div>
+
+      <div class="lang">
+        <a href="https://ml.kavalkaran.in/" hreflang="ml">Malayalam</a>
+        <span>മലയാളം</span>
+      </div>
+
+      <div class="lang">
+        <a href="https://in.kavalkaran.in/" hreflang="hi">Indian Languages</a>
+        <span>भारतीय भाषाएँ</span>
+      </div>
+
+      <div class="lang">
+        <a href="https://global.kavalkaran.in/" hreflang="x-default">Global Access</a>
+        <span>Worldwide</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFRASTRUCTURE STATEMENT -->
+  <section>
+    <h2>Built as Protection Infrastructure</h2>
+    <p style="text-align:center;max-width:750px;margin:auto;color:var(--muted);">
+      Kavalkaran is not a single tool. It is an evolving cyber
+      protection infrastructure designed to secure individuals,
+      enterprises, and digital ecosystems through layered security,
+      automation, monitoring, and language-first accessibility.
+    </p>
+  </section>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  © <span id="year"></span> Kavalkaran • Built in India 🇮🇳
+  © <span id="year"></span> Kavalkaran  
+  <br>
+  Built in India 🇮🇳 • Digital Security Initiative
 </footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+
 
 <!-- ================= SCRIPTS ================= -->
 <script>
@@ -311,5 +432,4 @@
 
   gtag('config', 'G-2ZK02H7EXR');
 </script>
-</body>
 </html>
